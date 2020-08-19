@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Anime Hype</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let anime of animes">
+    <img [src]="anime.attributes.posterImage.small" />
+    <ion-card-header>
+      <ion-card-subtitle>{{anime.attributes.ageRatingGuide}}</ion-card-subtitle>
+      <ion-card-title>
+        {{anime.attributes.titles.en_jp}}
+        <a href="http://youtube.com/watch?v={{anime.attributes.youtubeVideoId}}">
+          <ion-icon name="logo-youtube" color="danger"></ion-icon>
+        </a>
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{anime.attributes.description}}
+    </ion-card-content>
+  </ion-card>
+  <ion-button *ngIf="!first" color="secondary" (click)="clickOnFirstPageButton()"><ion-icon name="play-back-outline"></ion-icon></ion-button>
+  <ion-button *ngIf="!first" color="secondary" (click)="clickOnPreviousPageButton()"><ion-icon name="play-skip-back-outline"></ion-icon></ion-button>
+  <ion-button *ngIf="!last" color="secondary" (click)="clickOnNextPageButton()"><ion-icon name="play-skip-forward-outline"></ion-icon></ion-button>
+  <ion-button *ngIf="!last" color="secondary" (click)="clickOnLastPageButton()"><ion-icon name="play-forward-outline"></ion-icon></ion-button>
+</ion-content>

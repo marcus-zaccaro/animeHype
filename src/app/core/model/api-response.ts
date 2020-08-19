@@ -1,8 +1,7 @@
 import { AnimeModel } from './anime-model';
+import { NavigationLinkModel } from './navigation-link-model';
 
 export interface ApiResponse {
-    page: number;
-    total_results: number;
-    total_pages: number;
-    results: Array<AnimeModel>;
+    data: Array<AnimeModel>;
+    links: NavigationLinkModel;
 }

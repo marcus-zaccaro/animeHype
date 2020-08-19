@@ -12,9 +12,17 @@ export class ApiService {
     private http: HttpClient
   ) { }
 
-  getAnimes(): Promise<ApiResponse> {
+  getAnimes(pageLimit?: number, pageOffset?: number): Promise<ApiResponse> {
     return new Promise((resolve, reject) => {
-      const url = `${environment.API_BASE_PATH}/anime?`;
+      let url = `${environment.API_BASE_PATH}/anime?`;
+
+      if (pageLimit) {
+        url += `&page[limit]=${pageLimit}`;
+      }
+
+      if (pageOffset) {
+        url += `&page[offset]=${pageOffset}`;
+      }
 
       this.http.get<ApiResponse>(url).subscribe(data => {
         resolve(data);
