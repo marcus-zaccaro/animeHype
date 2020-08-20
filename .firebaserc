@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "animehype-86be0": {
+      "hosting": {
+        "app": [
+          "animehype-86be0"
+        ]
+      }
+    }
+  }
+}

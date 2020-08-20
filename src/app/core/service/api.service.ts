@@ -14,7 +14,7 @@ export class ApiService {
 
   getAnimes(pageLimit?: number, pageOffset?: number): Promise<ApiResponse> {
     return new Promise((resolve, reject) => {
-      let url = `${environment.API_BASE_PATH}/anime?`;
+      let url = `${environment.API_ANIME_BASE_PATH}/anime?`;
 
       if (pageLimit) {
         url += `&page[limit]=${pageLimit}`;
@@ -32,7 +32,7 @@ export class ApiService {
 
   getSearchAnime(searchText: string): Promise<ApiResponse> {
     return new Promise((resolve, reject) => {
-      const url = `${environment.API_BASE_PATH}/anime?filter[text]=${searchText}`;
+      const url = `${environment.API_ANIME_BASE_PATH}/anime?filter[text]=${searchText}`;
       this.http.get<ApiResponse>(url).subscribe(data => {
         resolve(data);
       });

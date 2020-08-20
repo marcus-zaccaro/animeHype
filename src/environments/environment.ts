@@ -4,7 +4,16 @@
 
 export const environment = {
   production: false,
-  API_BASE_PATH: 'https://kitsu.io/api/edge'
+  API_ANIME_BASE_PATH: 'https://kitsu.io/api/edge',
+  firebase: {
+    apiKey: 'AIzaSyCjOh28r9WGDHW4RKmWZfbbjy_vMFx3Itk',
+    authDomain: 'animehype-86be0.firebaseapp.com',
+    databaseURL: 'https://animehype-86be0.firebaseio.com',
+    projectId: 'animehype-86be0',
+    storageBucket: 'animehype-86be0.appspot.com',
+    messagingSenderId: '457039686918',
+    appId: '1:457039686918:web:8b81590b725455ca3f0287'
+  }
 };
 
 /*
