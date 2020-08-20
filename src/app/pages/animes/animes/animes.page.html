@@ -2,6 +2,9 @@
   <ion-toolbar>
     <ion-title>Anime Hype</ion-title>
   </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar [showCancelButton]="!searchText" [(ngModel)]="searchText" (ionInput)="onInput($event)" (ionCancel)="onCancel($event)"></ion-searchbar>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content>

@@ -15,6 +15,8 @@ export class AnimesPage implements OnInit {
   lastOffset = 12062;
   first = true;
   last = false;
+  searchText = '';
+  loading = true;
 
   constructor(
     private apiService: ApiService
@@ -57,6 +59,18 @@ export class AnimesPage implements OnInit {
     this.first = false;
     this.last = true;
   }
+
+  onInput() {
+    this.apiService.getSearchAnime(this.searchText).then(response => {
+      this.animes = response.data;
+    });
+  }
+
+  onCancel() {
+    this.getAnimes(this.pageLimit, this.pageOffset);
+  }
+
+
 
 
 }

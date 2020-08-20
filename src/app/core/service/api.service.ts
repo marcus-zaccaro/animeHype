@@ -30,4 +30,13 @@ export class ApiService {
     });
   }
 
+  getSearchAnime(searchText: string): Promise<ApiResponse> {
+    return new Promise((resolve, reject) => {
+      const url = `${environment.API_BASE_PATH}/anime?filter[text]=${searchText}`;
+      this.http.get<ApiResponse>(url).subscribe(data => {
+        resolve(data);
+      });
+    });
+  }
+
 }
