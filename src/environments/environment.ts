@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   API_ANIME_BASE_PATH: 'https://kitsu.io/api/edge',
-  firebase: {
+  firebaseConfig: {
     apiKey: 'AIzaSyCjOh28r9WGDHW4RKmWZfbbjy_vMFx3Itk',
     authDomain: 'animehype-86be0.firebaseapp.com',
     databaseURL: 'https://animehype-86be0.firebaseio.com',

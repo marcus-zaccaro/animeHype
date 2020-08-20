@@ -18,6 +18,7 @@ export class LoginPage implements OnInit {
 
   tryLogin() {
     this.authService.getAuthenticationByGoogle();
+    console.log("testando");
   }
 
 }
